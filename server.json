@@ -17,7 +17,7 @@
 		"image_offer": "UbuntuServer",
 		"image_sku": "18.04-LTS",
   
-		"managed_image_resource_group_name": "udacity-assignment1-rg",
+		"managed_image_resource_group_name": "minhng130300_rg_0085",
 		"managed_image_name": "udacity-packer-image",
   
 		"location": "West Europe",
