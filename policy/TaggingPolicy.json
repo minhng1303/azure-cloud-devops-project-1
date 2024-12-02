@@ -1,41 +1,19 @@
 {
-  "properties": {
-    "displayName": "Require specific tags on resources",
-    "policyType": "Custom",
-    "mode": "Indexed",
-    "description": "This policy ensures that resources are tagged with 'Environment' tag.",
-    "metadata": {
-      "version": "1.0.0",
-      "category": "Tagging"
-    },
-    "parameters": {
-      "tagName": {
-        "type": "String",
-        "defaultValue": "Environment",
-        "metadata": {
-          "description": "The name of the required tag.",
-          "displayName": "Tag Name"
+  "if": {
+    "not": {
+      "allOf": [
+        {
+          "field": "tags[Environment]",
+          "exists": "true"
+        },
+        {
+          "field": "tags[Department]",
+          "exists": "true"
         }
-      },
-      "tagValue": {
-        "type": "String",
-        "defaultValue": "Production",
-        "metadata": {
-          "description": "The value of the required tag.",
-          "displayName": "Tag Value"
-        }
-      }
-    },
-    "policyRule": {
-      "if": {
-        "not": {
-          "field": "tags[${parameters.tagName}]",
-          "equals": "${parameters.tagValue}"
-        }
-      },
-      "then": {
-        "effect": "deny"
-      }
+      ]
     }
+  },
+  "then": {
+    "effect": "deny"
   }
 }
