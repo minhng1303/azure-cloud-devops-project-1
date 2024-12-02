@@ -1,33 +1,41 @@
 {
   "properties": {
-      "displayName": "Require a tag on resources",
-      "policyType": "BuiltIn",
-      "mode": "Indexed",
-      "description": "Enforces existence of a tag. Does not apply to resource groups.",
-      "metadata": {
-          "version": "1.0.1",
-          "category": "Tags"
+    "displayName": "Require specific tags on resources",
+    "policyType": "Custom",
+    "mode": "Indexed",
+    "description": "This policy ensures that resources are tagged with 'Environment' tag.",
+    "metadata": {
+      "version": "1.0.0",
+      "category": "Tagging"
+    },
+    "parameters": {
+      "tagName": {
+        "type": "String",
+        "defaultValue": "Environment",
+        "metadata": {
+          "description": "The name of the required tag.",
+          "displayName": "Tag Name"
+        }
       },
-      "parameters": {
-          "tagName": {
-              "type": "String",
-              "metadata": {
-                  "displayName": "Tag Name",
-                  "description": "Name of the tag, such as 'environment'"
-              }
-          }
-      },
-      "policyRule": {
-          "if": {
-              "field": "[concat('tags[', parameters('tagName'), ']')]",
-              "exists": "false"
-          },
-          "then": {
-              "effect": "deny"
-          }
+      "tagValue": {
+        "type": "String",
+        "defaultValue": "Production",
+        "metadata": {
+          "description": "The value of the required tag.",
+          "displayName": "Tag Value"
+        }
       }
-  },
-  "id": "/providers/Microsoft.Authorization/policyDefinitions/871b6d14-10aa-478d-b590-94f262ecfa99",
-  "type": "Microsoft.Authorization/policyDefinitions",
-  "name": "871b6d14-10aa-478d-b590-94f262ecfa99"
+    },
+    "policyRule": {
+      "if": {
+        "not": {
+          "field": "tags[${parameters.tagName}]",
+          "equals": "${parameters.tagValue}"
+        }
+      },
+      "then": {
+        "effect": "deny"
+      }
+    }
+  }
 }
