@@ -18,7 +18,6 @@
 		"image_sku": "18.04-LTS",
   
 		"build_resource_group_name": "minhng130300_rg_0085",
-		"managed_image_name": "udacity-packer-image",
   
 		"location": "West Europe",
 		"vm_size": "Standard_B1s"
