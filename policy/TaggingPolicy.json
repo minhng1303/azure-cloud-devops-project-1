@@ -1,18 +1,11 @@
 {
   "if": {
-    "not": {
-      "allOf": [
-        {
-          "field": "tags[Environment]",
-          "exists": "true"
-        },
-        {
-          "field": "tags[Department]",
-          "exists": "true"
-        }
-      ]
-    }
-  },
+    "allOf": [
+      {
+        "value": "[empty(field('tags'))]",
+        "equals": "true"
+      }
+  ]},
   "then": {
     "effect": "deny"
   }
