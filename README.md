@@ -30,25 +30,6 @@ For this project, you will write a Packer template and a Terraform template to d
 
 3. Create the VM image using packer.
 
-   Note: The the Resource Group set in server.json (managed_image_resource_group_name) must exist prior to executing packer build command. You    can check that by executing:
-
-   ```bash
-   az group exists -n <resource-group-name> 
-   ```
-
-   or list all existing groups:
-
-   ```bash
-   az group list
-   ```
-
-   If necessary, create the resource group manually:
-   (Location parameter shall correspond to location property in server.json / all lowercase no space between, e.g. West Europe in server.json    corresponds to --location westeurope on CLI)
-
-   ```bash
-   az group create --name <resource-group-name> --location <your-location> 
-   ```
-
    ```bash
    packer build server.json
    ```
