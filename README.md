@@ -21,10 +21,10 @@ For this project, you will write a Packer template and a Terraform template to d
 
 1. Make sure the following environment variables are set and correspond to your azure account details:
 
-   - ARM_CLIENT_ID
-   - ARM_CLIENT_SECRET
-   - ARM_SUBSCRIPTION_ID
-   - ARM_TENANT_ID
+   - AZURE_CLIENT_ID
+   - AZURE_CLIENT_SECRET
+   - AZURE_SUBSCRIPTION_ID
+   - AZURE_TENANT_ID
 
 2. Navigate to the directory containing the .tf and .json files
 
