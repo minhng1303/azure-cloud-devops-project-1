@@ -34,19 +34,11 @@ For this project, you will write a Packer template and a Terraform template to d
    packer build server.json
    ```
 
-4. Create tagging policy definition as defined in tagging-policy-rule.json and assign this to the subscription by running the bash script tagging-policy-create.sh
-
-   First make the script executable:
+4. Create tagging policy definition as defined in tagging-policy-rule.json and assign this to the subscription
 
     ```bash
-    chmod +x tagging-policy-create.sh 
+    az policy definition create --name TaggingPolicy --rules TaggingPolicty.json
     ```
-
-   Execute the script:
-
-   ```bash
-   ./tagging-policy-create.sh
-   ```
 
 5. Deploy the scalable web server by executing the following commands:
 
