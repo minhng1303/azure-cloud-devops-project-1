@@ -26,7 +26,7 @@ For this project, you will write a Packer template and a Terraform template to d
    - AZURE_SUBSCRIPTION_ID
    - AZURE_TENANT_ID
 
-2. Navigate to the startfiles directory
+2. Navigate to the start_files directory
 
 3. Create the VM image using packer.
 
