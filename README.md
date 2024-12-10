@@ -60,6 +60,7 @@ For this project, you will write a Packer template and a Terraform template to d
    terraform apply "solution.plan"
    ```
    How to customize vars.tf
+   
    This file contains all the variables that going to be used in main.tf file. If you want to customize parameter, you need to change values default inside the vars.tf file. Example:
    
    ![image](https://github.com/user-attachments/assets/80706a63-945d-4f3f-825b-3d61cbc10bf0)
