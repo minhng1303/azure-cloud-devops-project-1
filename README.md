@@ -26,7 +26,7 @@ For this project, you will write a Packer template and a Terraform template to d
    - AZURE_SUBSCRIPTION_ID
    - AZURE_TENANT_ID
 
-2. Navigate to the directory containing the .tf and .json files
+2. Navigate to the startfiles directory
 
 3. Create the VM image using packer.
 
@@ -44,12 +44,6 @@ For this project, you will write a Packer template and a Terraform template to d
 
    ```bash
    terraform init
-   ```
-
-   Import resource group created in step 3 to terraform state and provide VM user password when prompted:
-
-   ```bash
-   terraform import azurerm_resource_group.main /subscriptions/$ARM_SUBSCRIPTION_ID/resourceGroups/<resource-group-name>
    ```
 
    Dry run the deployment and save it to a file "solution.plan"
