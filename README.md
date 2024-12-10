@@ -74,3 +74,9 @@ For this project, you will write a Packer template and a Terraform template to d
    ```bash
    terraform destroy
    ```
+
+
+Output after running terraform apply, all the resouse have been provisioned after running the command.
+
+![image](https://github.com/user-attachments/assets/3c7401a1-fbc8-402f-b2c3-ad82581fc6bc)
+
